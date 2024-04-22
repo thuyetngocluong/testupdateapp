@@ -6,21 +6,28 @@
 //
 
 import Cocoa
+import SnapKit
+import Combine
+
 
 class ViewController: NSViewController {
-
+    
+    @IBOutlet var contentView: NSView!
+    
+    private var subscriptions = Set<AnyCancellable>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
+        let loginView = LoginView()
+        setContentView(loginView)
+        
+        loginView
+            .loginSuccess
+            .sink { [weak self] in
+                self?.setContentView(MainTranslateView())
+            }
+            .store(in: &subscriptions)
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-
 }
-

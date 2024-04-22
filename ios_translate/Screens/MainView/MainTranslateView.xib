@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22689"/>
+        <capability name="Combo buttons" minToolsVersion="14.0" minSystemVersion="13.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MainTranslateView" customModule="ios_translate" customModuleProvider="target">
+            <connections>
+                <outlet property="customLeftView" destination="HTj-rq-z8v" id="w9z-um-LAM"/>
+                <outlet property="customRightView" destination="f3F-Rh-gQf" id="cIv-tH-fa0"/>
+                <outlet property="selectApplicationButton" destination="rwY-C2-0dh" id="okz-aL-aMW"/>
+                <outlet property="splitView" destination="Pif-p5-f9Z" id="KU5-gn-LcA"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="645" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RRg-1e-3EK">
+                    <rect key="frame" x="10" y="232" width="625" height="30"/>
+                    <subviews>
+                        <popUpButton horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rwY-C2-0dh">
+                            <rect key="frame" x="-3" y="-4" width="76" height="37"/>
+                            <popUpButtonCell key="cell" type="bevel" title="Item 1" bezelStyle="regularSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="EXg-Hm-IaE" id="IMx-hq-1ip">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="menu"/>
+                                <menu key="menu" id="MTB-V3-5sv">
+                                    <items>
+                                        <menuItem title="Item 1" state="on" id="EXg-Hm-IaE"/>
+                                        <menuItem title="Item 2" id="l6g-OK-Ecn"/>
+                                        <menuItem title="Item 3" id="7CO-Nj-bnH"/>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="ZcG-Mp-HqZ"/>
+                            </constraints>
+                            <connections>
+                                <action selector="didSelectedApplication:" target="-2" id="jVo-mh-Fhb"/>
+                            </connections>
+                        </popUpButton>
+                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="J5f-SE-ZPt">
+                            <rect key="frame" x="70" y="0.0" width="504" height="30"/>
+                        </customView>
+                        <comboButton verticalHuggingPriority="750" continuous="YES" baseWritingDirection="leftToRight" alignment="center" title="Button" imageScaling="proportionallyDown" style="unified" translatesAutoresizingMaskIntoConstraints="NO" id="kOA-Wu-SbH" customClass="AddMoreLanguageButton" customModule="ios_translate" customModuleProvider="target">
+                            <rect key="frame" x="571" y="-2" width="57" height="34"/>
+                            <menu key="menu" title="Hello" id="hvx-so-MtX">
+                                <items>
+                                    <menuItem title="Item 1" state="on" id="uUC-QI-7d0"/>
+                                    <menuItem title="Item 2" state="on" id="GXw-k4-vn0"/>
+                                </items>
+                            </menu>
+                        </comboButton>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="rwY-C2-0dh" firstAttribute="top" secondItem="RRg-1e-3EK" secondAttribute="top" id="3A4-uS-Mkx"/>
+                        <constraint firstAttribute="height" constant="30" id="BpW-mT-Wqn"/>
+                        <constraint firstItem="kOA-Wu-SbH" firstAttribute="top" secondItem="RRg-1e-3EK" secondAttribute="top" id="DTj-mX-0tN"/>
+                        <constraint firstAttribute="bottom" secondItem="kOA-Wu-SbH" secondAttribute="bottom" id="VnB-Nv-0q6"/>
+                    </constraints>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+                <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pif-p5-f9Z">
+                    <rect key="frame" x="0.0" y="10" width="645" height="212"/>
+                    <subviews>
+                        <customView fixedFrame="YES" id="HTj-rq-z8v" customClass="MainTranslateListLanguageView" customModule="ios_translate" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="237" height="212"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </customView>
+                        <customView fixedFrame="YES" id="f3F-Rh-gQf" customClass="TranslateView" customModule="ios_translate" customModuleProvider="target">
+                            <rect key="frame" x="238" y="0.0" width="407" height="212"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </customView>
+                    </subviews>
+                    <holdingPriorities>
+                        <real value="300"/>
+                        <real value="250"/>
+                    </holdingPriorities>
+                </splitView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="RRg-1e-3EK" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="10" id="Pad-M8-Q6J"/>
+                <constraint firstAttribute="bottom" secondItem="Pif-p5-f9Z" secondAttribute="bottom" constant="10" id="PeI-zV-0lZ"/>
+                <constraint firstItem="RRg-1e-3EK" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="10" id="Uo3-cj-ulU"/>
+                <constraint firstItem="Pif-p5-f9Z" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="asn-E0-JXu"/>
+                <constraint firstAttribute="trailing" secondItem="Pif-p5-f9Z" secondAttribute="trailing" id="coJ-pG-xQr"/>
+                <constraint firstItem="Pif-p5-f9Z" firstAttribute="top" secondItem="RRg-1e-3EK" secondAttribute="bottom" constant="10" id="nA2-UF-Tj8"/>
+                <constraint firstAttribute="trailing" secondItem="RRg-1e-3EK" secondAttribute="trailing" constant="10" id="ny4-X8-Bf9"/>
+            </constraints>
+            <point key="canvasLocation" x="48" y="154"/>
+        </customView>
+    </objects>
+</document>
