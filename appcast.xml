@@ -8,7 +8,7 @@
             <sparkle:version>1</sparkle:version>
             <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/thuyetngocluong/testupdateapp/releases/download/v1.0.4/ios_translate-v1.0.4.dmg" length="14595600" type="application/octet-stream" sparkle:edSignature="92bFewxSvm/4Je5qmGLjsw7rLw9cE95ktwDzzUlFL94ScvwFmdsIDbsP5J4W27qlJ+mRtz4Z0WCWHhaBu3P7DA=="/>
+            <enclosure url="https://thuyetngocluong.github.io/testupdateapp/ios_translate-v1.0.4.dmg" length="14595600" type="application/octet-stream" sparkle:edSignature="92bFewxSvm/4Je5qmGLjsw7rLw9cE95ktwDzzUlFL94ScvwFmdsIDbsP5J4W27qlJ+mRtz4Z0WCWHhaBu3P7DA=="/>
         </item>
     </channel>
 </rss>
