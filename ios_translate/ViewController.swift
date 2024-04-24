@@ -19,7 +19,17 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        AppDataManager.shared.$user
+            .removeDuplicates()
+            .filter({ $0 == nil })
+            .sink { [weak self] _ in
+                self?.setUpLoginView()
+            }
+            .store(in: &subscriptions)
+    }
+    
+    private
+    func setUpLoginView() {
         let loginView = LoginView()
         setContentView(loginView)
         

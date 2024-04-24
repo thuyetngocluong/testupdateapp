@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22689"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -9,6 +8,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="LoginView" customModule="ios_translate" customModuleProvider="target">
             <connections>
+                <outlet property="alphaButton" destination="Fxo-s2-xLH" id="f6G-lG-eqa"/>
+                <outlet property="ipTextField" destination="JuS-80-kDe" id="ErA-6R-IEC"/>
                 <outlet property="loginButton" destination="Y1i-bU-1sh" id="R6n-9i-aiT"/>
                 <outlet property="passwordTextField" destination="GLx-cv-dmL" id="hXs-kX-nDQ"/>
                 <outlet property="usernameTextField" destination="qiH-VR-GCw" id="GP4-uf-Def"/>
@@ -17,11 +18,21 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <rect key="frame" x="0.0" y="0.0" width="480" height="244"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="Fxo-s2-xLH" customClass="AlphaBackgroundButton" customModule="ios_translate" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="244"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="taZ-cE-y1A">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="clickAction:" target="-2" id="h0V-fe-ycK"/>
+                    </connections>
+                </button>
                 <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tRn-KX-2qO">
-                    <rect key="frame" x="90" y="77" width="300" height="118"/>
+                    <rect key="frame" x="90" y="63" width="300" height="118"/>
                     <subviews>
                         <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cs2-Ie-rAf">
                             <rect key="frame" x="0.0" y="84" width="300" height="34"/>
@@ -81,6 +92,35 @@
                                 <real value="3.4028234663852886e+38"/>
                             </customSpacing>
                         </stackView>
+                        <stackView hidden="YES" distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fhK-7I-FBs">
+                            <rect key="frame" x="0.0" y="84" width="96" height="34"/>
+                            <subviews>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XPi-S0-U9M">
+                                    <rect key="frame" x="-2" y="21" width="56" height="13"/>
+                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Enter Host" id="tzI-nO-LvD">
+                                        <font key="font" metaFont="system" size="10"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField verticalHuggingPriority="750" contentType="password" translatesAutoresizingMaskIntoConstraints="NO" id="JuS-80-kDe">
+                                    <rect key="frame" x="0.0" y="0.0" width="96" height="21"/>
+                                    <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Enter Host" drawsBackground="YES" id="h3q-iZ-GTP">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
                         <button translatesAutoresizingMaskIntoConstraints="NO" id="Y1i-bU-1sh" customClass="BaseButton" customModule="ios_translate" customModuleProvider="target">
                             <rect key="frame" x="110" y="0.0" width="80" height="30"/>
                             <buttonCell key="cell" type="bevel" title="Login" bezelStyle="rounded" alignment="center" state="on" inset="2" id="jgq-Ie-2wa">
@@ -103,10 +143,12 @@
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="0mG-MC-gQd"/>
+                        <constraint firstItem="fhK-7I-FBs" firstAttribute="leading" secondItem="tRn-KX-2qO" secondAttribute="leading" id="1K7-8w-plR"/>
                         <constraint firstAttribute="trailing" secondItem="efT-ET-mRW" secondAttribute="trailing" id="Hif-LB-psC"/>
                         <constraint firstAttribute="trailing" secondItem="Cs2-Ie-rAf" secondAttribute="trailing" id="TmE-Ef-hdH"/>
                     </constraints>
                     <visibilityPriorities>
+                        <integer value="1000"/>
                         <integer value="1000"/>
                         <integer value="1000"/>
                         <integer value="1000"/>
@@ -115,14 +157,19 @@
                         <real value="3.4028234663852886e+38"/>
                         <real value="3.4028234663852886e+38"/>
                         <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
                     </customSpacing>
                 </stackView>
             </subviews>
             <constraints>
                 <constraint firstItem="tRn-KX-2qO" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="EWA-Fd-6Gn"/>
+                <constraint firstAttribute="trailing" secondItem="Fxo-s2-xLH" secondAttribute="trailing" id="K6E-DG-1q6"/>
+                <constraint firstItem="Fxo-s2-xLH" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="OOb-bk-KJL"/>
+                <constraint firstAttribute="bottom" secondItem="Fxo-s2-xLH" secondAttribute="bottom" id="Osu-Sr-khB"/>
+                <constraint firstItem="Fxo-s2-xLH" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="QyI-0J-5rT"/>
                 <constraint firstItem="tRn-KX-2qO" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="Ygw-QN-A2D"/>
             </constraints>
-            <point key="canvasLocation" x="-413" y="118"/>
+            <point key="canvasLocation" x="-413" y="142"/>
         </customView>
     </objects>
     <resources>

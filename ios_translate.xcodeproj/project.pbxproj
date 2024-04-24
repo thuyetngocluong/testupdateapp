@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA008BAE2BD05C9100B294FA /* LanguageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA008BAD2BD05C9100B294FA /* LanguageListCell.xib */; };
-		DA008BB02BD05C9900B294FA /* LanguageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA008BAF2BD05C9900B294FA /* LanguageListCell.swift */; };
-		DA008BB22BD0617600B294FA /* LanguageListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA008BB12BD0617600B294FA /* LanguageListItemCell.xib */; };
-		DA008BB42BD0625200B294FA /* LanguageListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA008BB32BD0625200B294FA /* LanguageListItemCell.swift */; };
+		DA0D07372BD8410700A2C4FA /* SetPreferredLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0D07362BD8410700A2C4FA /* SetPreferredLanguageView.swift */; };
+		DA0D07392BD8410E00A2C4FA /* SetPreferredLanguageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA0D07382BD8410E00A2C4FA /* SetPreferredLanguageView.xib */; };
+		DA0D073B2BD843B100A2C4FA /* TrackingSizeNSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0D073A2BD843B100A2C4FA /* TrackingSizeNSView.swift */; };
+		DA0D073E2BD84D0200A2C4FA /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = DA0D073D2BD84D0200A2C4FA /* KeyboardShortcuts */; };
 		DA1597CB2BD1966100E0ABDB /* TranslateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA1597CA2BD1966100E0ABDB /* TranslateView.xib */; };
 		DA1597CD2BD1966A00E0ABDB /* TranslateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1597CC2BD1966A00E0ABDB /* TranslateView.swift */; };
 		DA1597D02BD196A000E0ABDB /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1597CF2BD196A000E0ABDB /* BaseView.swift */; };
@@ -65,10 +65,22 @@
 		DABFE5802BD6B1C300A878B4 /* EditLanguageItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DABFE57F2BD6B1C300A878B4 /* EditLanguageItemView.xib */; };
 		DABFE5832BD6B2DD00A878B4 /* Popupable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFE5822BD6B2DD00A878B4 /* Popupable.swift */; };
 		DABFE5852BD6B2EC00A878B4 /* AlphaBackgroundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFE5842BD6B2EC00A878B4 /* AlphaBackgroundButton.swift */; };
+		DABFE5882BD6E85700A878B4 /* AddViewKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFE5872BD6E85700A878B4 /* AddViewKeyView.swift */; };
+		DABFE58A2BD6E85D00A878B4 /* AddViewKeyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DABFE5892BD6E85D00A878B4 /* AddViewKeyView.xib */; };
+		DABFE58D2BD6EA9D00A878B4 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFE58C2BD6EA9D00A878B4 /* Utils.swift */; };
+		DABFE58F2BD6EDA100A878B4 /* TranslateAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFE58E2BD6EDA100A878B4 /* TranslateAPIRouter.swift */; };
+		DABFE5912BD6EF1500A878B4 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFE5902BD6EF1500A878B4 /* Array+Ext.swift */; };
 		DAC7F32A2BD600CC00132C60 /* AddMoreLanguageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC7F3292BD600CC00132C60 /* AddMoreLanguageButton.swift */; };
 		DAC7F32C2BD668C900132C60 /* PopupProgressWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC7F32B2BD668C900132C60 /* PopupProgressWindow.swift */; };
 		DAC7F32F2BD6727100132C60 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAC7F32E2BD6727100132C60 /* ProgressView.xib */; };
 		DAC7F3312BD6727F00132C60 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC7F3302BD6727F00132C60 /* ProgressView.swift */; };
+		DACC9D5C2BD75B75005E4678 /* PreviewTranslateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC9D5B2BD75B75005E4678 /* PreviewTranslateView.swift */; };
+		DACC9D5E2BD75B84005E4678 /* PreviewTranslateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DACC9D5D2BD75B84005E4678 /* PreviewTranslateView.xib */; };
+		DACC9D602BD75BBC005E4678 /* PopupHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC9D5F2BD75BBC005E4678 /* PopupHelper.swift */; };
+		DACC9D622BD775A3005E4678 /* ExportUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC9D612BD775A3005E4678 /* ExportUtils.swift */; };
+		DACC9D652BD783E3005E4678 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = DACC9D642BD783E3005E4678 /* Zip */; };
+		DACC9D672BD79DBB005E4678 /* ImportUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC9D662BD79DBB005E4678 /* ImportUtils.swift */; };
+		DACC9D692BD7A147005E4678 /* StringCatalogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC9D682BD7A147005E4678 /* StringCatalogModel.swift */; };
 		DAEDA0982BD5973100CB576D /* NSAttributed+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEDA0972BD5973100CB576D /* NSAttributed+Ext.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,10 +102,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DA008BAD2BD05C9100B294FA /* LanguageListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageListCell.xib; sourceTree = "<group>"; };
-		DA008BAF2BD05C9900B294FA /* LanguageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListCell.swift; sourceTree = "<group>"; };
-		DA008BB12BD0617600B294FA /* LanguageListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageListItemCell.xib; sourceTree = "<group>"; };
-		DA008BB32BD0625200B294FA /* LanguageListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListItemCell.swift; sourceTree = "<group>"; };
+		DA0D07362BD8410700A2C4FA /* SetPreferredLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPreferredLanguageView.swift; sourceTree = "<group>"; };
+		DA0D07382BD8410E00A2C4FA /* SetPreferredLanguageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetPreferredLanguageView.xib; sourceTree = "<group>"; };
+		DA0D073A2BD843B100A2C4FA /* TrackingSizeNSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingSizeNSView.swift; sourceTree = "<group>"; };
 		DA1597CA2BD1966100E0ABDB /* TranslateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TranslateView.xib; sourceTree = "<group>"; };
 		DA1597CC2BD1966A00E0ABDB /* TranslateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateView.swift; sourceTree = "<group>"; };
 		DA1597CF2BD196A000E0ABDB /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -142,10 +153,21 @@
 		DABFE57F2BD6B1C300A878B4 /* EditLanguageItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditLanguageItemView.xib; sourceTree = "<group>"; };
 		DABFE5822BD6B2DD00A878B4 /* Popupable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popupable.swift; sourceTree = "<group>"; };
 		DABFE5842BD6B2EC00A878B4 /* AlphaBackgroundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaBackgroundButton.swift; sourceTree = "<group>"; };
+		DABFE5872BD6E85700A878B4 /* AddViewKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewKeyView.swift; sourceTree = "<group>"; };
+		DABFE5892BD6E85D00A878B4 /* AddViewKeyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddViewKeyView.xib; sourceTree = "<group>"; };
+		DABFE58C2BD6EA9D00A878B4 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		DABFE58E2BD6EDA100A878B4 /* TranslateAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateAPIRouter.swift; sourceTree = "<group>"; };
+		DABFE5902BD6EF1500A878B4 /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
 		DAC7F3292BD600CC00132C60 /* AddMoreLanguageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoreLanguageButton.swift; sourceTree = "<group>"; };
 		DAC7F32B2BD668C900132C60 /* PopupProgressWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupProgressWindow.swift; sourceTree = "<group>"; };
 		DAC7F32E2BD6727100132C60 /* ProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		DAC7F3302BD6727F00132C60 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		DACC9D5B2BD75B75005E4678 /* PreviewTranslateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewTranslateView.swift; sourceTree = "<group>"; };
+		DACC9D5D2BD75B84005E4678 /* PreviewTranslateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviewTranslateView.xib; sourceTree = "<group>"; };
+		DACC9D5F2BD75BBC005E4678 /* PopupHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupHelper.swift; sourceTree = "<group>"; };
+		DACC9D612BD775A3005E4678 /* ExportUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportUtils.swift; sourceTree = "<group>"; };
+		DACC9D662BD79DBB005E4678 /* ImportUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportUtils.swift; sourceTree = "<group>"; };
+		DACC9D682BD7A147005E4678 /* StringCatalogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCatalogModel.swift; sourceTree = "<group>"; };
 		DAEDA0972BD5973100CB576D /* NSAttributed+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributed+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,7 +181,9 @@
 				DA21529A2BD0522E003C133F /* SnapKit in Frameworks */,
 				DA7A69222BD26FFA006CE6BF /* Alamofire in Frameworks */,
 				DA1597D32BD199CD00E0ABDB /* Then in Frameworks */,
+				DA0D073E2BD84D0200A2C4FA /* KeyboardShortcuts in Frameworks */,
 				DA7A69272BD2705F006CE6BF /* PromiseKit in Frameworks */,
+				DACC9D652BD783E3005E4678 /* Zip in Frameworks */,
 				DA4C3E022BD2E7AD00A12784 /* Realm in Frameworks */,
 				DA1597E82BD1B6CB00E0ABDB /* SwiftyAttributes in Frameworks */,
 				DA4C3E042BD2E7AD00A12784 /* RealmSwift in Frameworks */,
@@ -184,6 +208,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA0D07352BD840F000A2C4FA /* SetPreferredLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				DA0D07362BD8410700A2C4FA /* SetPreferredLanguageView.swift */,
+				DA0D07382BD8410E00A2C4FA /* SetPreferredLanguageView.xib */,
+			);
+			path = SetPreferredLanguage;
+			sourceTree = "<group>";
+		};
 		DA1597C92BD1963E00E0ABDB /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +236,7 @@
 				DA7A69232BD27002006CE6BF /* APIRouter.swift */,
 				DA7A69282BD27083006CE6BF /* BaseError.swift */,
 				DA7A692A2BD270A7006CE6BF /* AuthAPIRouter.swift */,
+				DABFE58E2BD6EDA100A878B4 /* TranslateAPIRouter.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -237,6 +271,7 @@
 				DA7A69312BD27713006CE6BF /* UserDefault+Ext.swift */,
 				DAEDA0972BD5973100CB576D /* NSAttributed+Ext.swift */,
 				DA4610782BD59F4200FBC80E /* String+Ext.swift */,
+				DABFE5902BD6EF1500A878B4 /* Array+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -273,6 +308,7 @@
 		DA21526C2BD051E9003C133F /* ios_translate */ = {
 			isa = PBXGroup;
 			children = (
+				DABFE58B2BD6EA8F00A878B4 /* Utils */,
 				DAC7F3282BD600BE00132C60 /* Components */,
 				DA7A69352BD27F95006CE6BF /* Manager */,
 				DA7A69122BD26901006CE6BF /* Models */,
@@ -312,10 +348,6 @@
 			children = (
 				DA21529C2BD0536E003C133F /* LanguageItemCell.xib */,
 				DA21529E2BD05377003C133F /* LanguageItemCell.swift */,
-				DA008BAD2BD05C9100B294FA /* LanguageListCell.xib */,
-				DA008BAF2BD05C9900B294FA /* LanguageListCell.swift */,
-				DA008BB12BD0617600B294FA /* LanguageListItemCell.xib */,
-				DA008BB32BD0625200B294FA /* LanguageListItemCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -345,6 +377,7 @@
 				DA7A692C2BD275B7006CE6BF /* User.swift */,
 				DA7A69332BD2791E006CE6BF /* UserApplication.swift */,
 				DA43201E2BD3656900CF3917 /* Translation.swift */,
+				DACC9D682BD7A147005E4678 /* StringCatalogModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -380,12 +413,35 @@
 		DABFE5812BD6B2CF00A878B4 /* Popup */ = {
 			isa = PBXGroup;
 			children = (
+				DA0D07352BD840F000A2C4FA /* SetPreferredLanguage */,
+				DACC9D5A2BD75B5C005E4678 /* Preview */,
+				DABFE5862BD6E84100A878B4 /* AddNewKey */,
 				DABFE57C2BD6AFAA00A878B4 /* EditView */,
 				DAC7F32D2BD6725D00132C60 /* ProgressView */,
 				DABFE5822BD6B2DD00A878B4 /* Popupable.swift */,
 				DABFE5842BD6B2EC00A878B4 /* AlphaBackgroundButton.swift */,
+				DACC9D5F2BD75BBC005E4678 /* PopupHelper.swift */,
 			);
 			path = Popup;
+			sourceTree = "<group>";
+		};
+		DABFE5862BD6E84100A878B4 /* AddNewKey */ = {
+			isa = PBXGroup;
+			children = (
+				DABFE5872BD6E85700A878B4 /* AddViewKeyView.swift */,
+				DABFE5892BD6E85D00A878B4 /* AddViewKeyView.xib */,
+			);
+			path = AddNewKey;
+			sourceTree = "<group>";
+		};
+		DABFE58B2BD6EA8F00A878B4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DABFE58C2BD6EA9D00A878B4 /* Utils.swift */,
+				DACC9D612BD775A3005E4678 /* ExportUtils.swift */,
+				DACC9D662BD79DBB005E4678 /* ImportUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		DAC7F3282BD600BE00132C60 /* Components */ = {
@@ -394,6 +450,7 @@
 				DABFE5812BD6B2CF00A878B4 /* Popup */,
 				DAC7F3292BD600CC00132C60 /* AddMoreLanguageButton.swift */,
 				DAC7F32B2BD668C900132C60 /* PopupProgressWindow.swift */,
+				DA0D073A2BD843B100A2C4FA /* TrackingSizeNSView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -405,6 +462,15 @@
 				DAC7F3302BD6727F00132C60 /* ProgressView.swift */,
 			);
 			path = ProgressView;
+			sourceTree = "<group>";
+		};
+		DACC9D5A2BD75B5C005E4678 /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				DACC9D5B2BD75B75005E4678 /* PreviewTranslateView.swift */,
+				DACC9D5D2BD75B84005E4678 /* PreviewTranslateView.xib */,
+			);
+			path = Preview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +500,8 @@
 				DA7A692F2BD276B1006CE6BF /* EasyCodable */,
 				DA4C3E012BD2E7AD00A12784 /* Realm */,
 				DA4C3E032BD2E7AD00A12784 /* RealmSwift */,
+				DACC9D642BD783E3005E4678 /* Zip */,
+				DA0D073D2BD84D0200A2C4FA /* KeyboardShortcuts */,
 			);
 			productName = ios_translate;
 			productReference = DA21526A2BD051E9003C133F /* ios_translate.app */;
@@ -517,6 +585,8 @@
 				DA7A69252BD2705F006CE6BF /* XCRemoteSwiftPackageReference "PromiseKit" */,
 				DA7A692E2BD276B1006CE6BF /* XCRemoteSwiftPackageReference "EasyCodable" */,
 				DA4C3E002BD2E7AD00A12784 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				DACC9D632BD783E3005E4678 /* XCRemoteSwiftPackageReference "Zip" */,
+				DA0D073C2BD84D0200A2C4FA /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 			);
 			productRefGroup = DA21526B2BD051E9003C133F /* Products */;
 			projectDirPath = "";
@@ -537,15 +607,16 @@
 				DA7A69032BD24E82006CE6BF /* anim_spinner.json in Resources */,
 				DA2152722BD051EA003C133F /* Assets.xcassets in Resources */,
 				DABFE5802BD6B1C300A878B4 /* EditLanguageItemView.xib in Resources */,
+				DABFE58A2BD6E85D00A878B4 /* AddViewKeyView.xib in Resources */,
+				DA0D07392BD8410E00A2C4FA /* SetPreferredLanguageView.xib in Resources */,
+				DACC9D5E2BD75B84005E4678 /* PreviewTranslateView.xib in Resources */,
 				DA1597CB2BD1966100E0ABDB /* TranslateView.xib in Resources */,
 				DA1597E12BD1AA1500E0ABDB /* LoginView.xib in Resources */,
 				DA7A69192BD269BF006CE6BF /* MainTranslateListLanguageView.xib in Resources */,
 				DAC7F32F2BD6727100132C60 /* ProgressView.xib in Resources */,
 				DA1597D72BD19AAE00E0ABDB /* TranslateActionCell.xib in Resources */,
-				DA008BAE2BD05C9100B294FA /* LanguageListCell.xib in Resources */,
 				DA7A690D2BD25844006CE6BF /* MainTranslateView.xib in Resources */,
 				DA21529D2BD0536E003C133F /* LanguageItemCell.xib in Resources */,
-				DA008BB22BD0617600B294FA /* LanguageListItemCell.xib in Resources */,
 				DA2152752BD051EA003C133F /* Base in Resources */,
 				DA7A691B2BD26A1B006CE6BF /* MainTranslateListLanguageCell.xib in Resources */,
 			);
@@ -572,28 +643,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DABFE5882BD6E85700A878B4 /* AddViewKeyView.swift in Sources */,
 				DAC7F32A2BD600CC00132C60 /* AddMoreLanguageButton.swift in Sources */,
 				DA7A691D2BD26A20006CE6BF /* MainTranslateListLanguageCell.swift in Sources */,
 				DA1597D92BD19AB800E0ABDB /* TranslateActionCell.swift in Sources */,
+				DABFE58F2BD6EDA100A878B4 /* TranslateAPIRouter.swift in Sources */,
 				DA7A690F2BD25ABB006CE6BF /* NSViewController+Ext.swift in Sources */,
 				DA7A692B2BD270A7006CE6BF /* AuthAPIRouter.swift in Sources */,
 				DA7A69082BD2520D006CE6BF /* Combine+Ext.swift in Sources */,
+				DACC9D672BD79DBB005E4678 /* ImportUtils.swift in Sources */,
+				DABFE5912BD6EF1500A878B4 /* Array+Ext.swift in Sources */,
 				DA1597DC2BD19C9C00E0ABDB /* NSTableView+Ext.swift in Sources */,
 				DA2152702BD051E9003C133F /* ViewController.swift in Sources */,
 				DA1597CD2BD1966A00E0ABDB /* TranslateView.swift in Sources */,
 				DA7A69372BD27FA3006CE6BF /* AppDataManager.swift in Sources */,
+				DA0D073B2BD843B100A2C4FA /* TrackingSizeNSView.swift in Sources */,
 				DA7A69242BD27002006CE6BF /* APIRouter.swift in Sources */,
 				DA7A691F2BD26BCA006CE6BF /* NSView+Ext.swift in Sources */,
 				DA43201F2BD3656900CF3917 /* Translation.swift in Sources */,
 				DA7A68F12BD22A5B006CE6BF /* BaseSpinIndicator.swift in Sources */,
 				DABFE57E2BD6AFD800A878B4 /* EditLanguageItemView.swift in Sources */,
-				DA008BB42BD0625200B294FA /* LanguageListItemCell.swift in Sources */,
+				DA0D07372BD8410700A2C4FA /* SetPreferredLanguageView.swift in Sources */,
+				DABFE58D2BD6EA9D00A878B4 /* Utils.swift in Sources */,
+				DACC9D622BD775A3005E4678 /* ExportUtils.swift in Sources */,
 				DAEDA0982BD5973100CB576D /* NSAttributed+Ext.swift in Sources */,
 				DA7A69142BD26910006CE6BF /* Language.swift in Sources */,
 				DA7A68F62BD24A7C006CE6BF /* NSProgressView+Ext.swift in Sources */,
 				DA1597E52BD1B3F600E0ABDB /* BaseButton.swift in Sources */,
+				DACC9D602BD75BBC005E4678 /* PopupHelper.swift in Sources */,
 				DA4610792BD59F4200FBC80E /* String+Ext.swift in Sources */,
-				DA008BB02BD05C9900B294FA /* LanguageListCell.swift in Sources */,
 				DAC7F32C2BD668C900132C60 /* PopupProgressWindow.swift in Sources */,
 				DA7A690B2BD25831006CE6BF /* MainTranslateView.swift in Sources */,
 				DA1597D02BD196A000E0ABDB /* BaseView.swift in Sources */,
@@ -605,6 +683,8 @@
 				DA7A69322BD27713006CE6BF /* UserDefault+Ext.swift in Sources */,
 				DA7A69292BD27083006CE6BF /* BaseError.swift in Sources */,
 				DABFE5852BD6B2EC00A878B4 /* AlphaBackgroundButton.swift in Sources */,
+				DACC9D5C2BD75B75005E4678 /* PreviewTranslateView.swift in Sources */,
+				DACC9D692BD7A147005E4678 /* StringCatalogModel.swift in Sources */,
 				DA1597E32BD1AA1B00E0ABDB /* LoginView.swift in Sources */,
 				DA21529F2BD05377003C133F /* LanguageItemCell.swift in Sources */,
 				DAC7F3312BD6727F00132C60 /* ProgressView.swift in Sources */,
@@ -785,6 +865,7 @@
 				DEVELOPMENT_TEAM = 5J3U89Q793;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "iOS Translate v1.0.2";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -793,7 +874,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zoro4rk.ios-translate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -813,6 +894,7 @@
 				DEVELOPMENT_TEAM = 5J3U89Q793;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "iOS Translate v1.0.2";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -821,7 +903,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zoro4rk.ios-translate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -943,6 +1025,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DA0D073C2BD84D0200A2C4FA /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		DA1597D12BD199CD00E0ABDB /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -1015,9 +1105,22 @@
 				minimumVersion = 1.2.0;
 			};
 		};
+		DACC9D632BD783E3005E4678 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DA0D073D2BD84D0200A2C4FA /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA0D073C2BD84D0200A2C4FA /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
 		DA1597D22BD199CD00E0ABDB /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DA1597D12BD199CD00E0ABDB /* XCRemoteSwiftPackageReference "Then" */;
@@ -1067,6 +1170,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DA7A692E2BD276B1006CE6BF /* XCRemoteSwiftPackageReference "EasyCodable" */;
 			productName = EasyCodable;
+		};
+		DACC9D642BD783E3005E4678 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DACC9D632BD783E3005E4678 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

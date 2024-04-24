@@ -19,6 +19,7 @@ class LanguageItemCell: NSTableCellView, NSTextFieldDelegate {
         self.cBackgroundColor = NSColor.clear
         textField?.backgroundColor = .clear
         textField?.delegate = self
+        textField?.placeholderString = "<<Empty>>"
     }
     
     func bind(text: String, textSearch: String) {
@@ -47,6 +48,7 @@ class LanguageItemCell: NSTableCellView, NSTextFieldDelegate {
         
         textField?.attributedStringValue = attribute
         textField?.allowsEditingTextAttributes = true
+        
     }
     
     

@@ -29,21 +29,25 @@ class AddMoreLanguageButton: NSComboButton, NSMenuDelegate {
     func setup() {
         title = "Set Preferred Languages"
         
-        AppDataManager.shared
-            .$selectedApplication.map(\.languages)
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] items in
-                guard let self = self else { return }
-                self.selectedLanguages = items
-                self.reloadMenu()
+        Publishers.CombineLatest(
+            AppDataManager.shared
+                .$selectedApplication.map(\.languages),
+            AppDataManager.shared.$allLanguages
+        )
+        .receive(on: DispatchQueue.main)
+        .sink { [weak self] selected, all in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.selectedLanguages = selected
+                self.reloadMenu(selectedLanguages: selected, all: all)
             }
-            .store(in: &subscriptions)
+        }
+        .store(in: &subscriptions)
     }
     
     private
-    func reloadMenu() {
-        let unSelectedLanguages = AppDataManager.shared
-            .allLanguages
+    func reloadMenu(selectedLanguages: [LanguageItem], all: [Language: [LanguageItem]]) {
+        let unSelectedLanguages = all
             .mapValues({ $0.filter({ !self.selectedLanguages.contains($0) }) })
             .filter({ !$0.value.isEmpty })
             .sorted(by: { $0.key.rawValue < $1.key.rawValue })
@@ -107,7 +111,7 @@ class AddMoreLanguageButton: NSComboButton, NSMenuDelegate {
     }
     @objc
     func didSelectLanguage(_ action: NSMenuItem) {
-       
+        
         guard let languageID = action.representedObject as? Int,
               languageID >= 0,
               let language = AppDataManager.shared.allLanguages.values.flatMap({ $0 }).first(where: { $0.id == languageID })

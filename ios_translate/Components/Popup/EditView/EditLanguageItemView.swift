@@ -12,11 +12,13 @@ class EditLanguageItemView: BaseNibView, Popupable {
     
     @IBOutlet weak var keyTextField: NSTextField!
     @IBOutlet weak var valueTextField: NSTextField!
+    @IBOutlet weak var valueLabel: NSTextField!
     
     var onOKAction: ((String, String, LanguageItem) -> Void)?
     
     @Published var key: String = ""
     @Published var value: String = ""
+    @Published var valueTitle: String = "Value"
     var language: LanguageItem = .init()
     
     override func setup() {
@@ -30,6 +32,11 @@ class EditLanguageItemView: BaseNibView, Popupable {
             .removeDuplicates()
             .receive(on: DispatchQueue.main)
             .assign(to: \.stringValue, on: valueTextField, ownership: .weak)
+            .store(in: &subscriptions)
+        $valueTitle
+            .removeDuplicates()
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.stringValue, on: valueLabel, ownership: .weak)
             .store(in: &subscriptions)
         
         keyTextField.textPulisher

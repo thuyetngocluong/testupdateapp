@@ -42,6 +42,7 @@ class TranslateView: BaseNibView {
     
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var searchField: NSSearchField!
+    @IBOutlet weak var emptyOnlyButton: NSButton!
     
     static let languageItemCell =  NSUserInterfaceItemIdentifier("keyColumn")
     
@@ -53,8 +54,12 @@ class TranslateView: BaseNibView {
     private var dataSource: [TranslateViewDataItem] = []
     private var isResizingTableColumn = false
     private var textSearch: String = ""
+    private var justEmpty = false
     
     private var sizeChanged = PassthroughSubject<Void, Never>()
+    
+    @Published private var translations: [Translation] = []
+    var overrideHandleEdit: ((_ id: Int, _ newKey: String, _ newValue: String, _ language: LanguageItem) -> Void)?
     
     override func setup() {
         setupTableView()
@@ -67,38 +72,12 @@ class TranslateView: BaseNibView {
                 self.reloadData()
             }
             .store(in: &subscriptions)
-    }
-    
-    private
-    func setupTableView() {
         
-        for column in columns {
-            tableView.addTableColumn(.init(identifier: column.identifier).then {
-                $0.resizingMask = []
-                $0.headerCell.attributedStringValue = column.title.withAttributes([
-                    .font(.systemFont(ofSize: 15, weight: .semibold)),
-                    .paragraphStyle(NSMutableParagraphStyle().then { $0.alignment = .center })
-                ])
-                $0.headerCell.alignment = .center
-                $0.minWidth = 100
-            })
-        }
-        
-        
-        tableView.usesAutomaticRowHeights = true
-        tableView.columnAutoresizingStyle = .noColumnAutoresizing
-        
-        
-        tableView.registerNibs(LanguageItemCell.self, TranslateActionCell.self)
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        Publishers.CombineLatest(AppDataManager.shared.$translations, $selectedLanguage)
+        Publishers.CombineLatest($translations, $selectedLanguage)
             .map { translations, language -> [TranslateViewDataItem] in
                 return translations.map { translation in
-                    let translated = translation.translates.first(where: { $0.language == language.language })?.value ?? ""
-                    let english = translation.translates.first(where: { $0.language == .english })?.value ?? ""
+                    let translated = translation.translates.first(where: { $0.language == language })?.value ?? ""
+                    let english = translation.translates.first(where: { $0.language.language == .english })?.value ?? ""
                     return TranslateViewDataItem(id: translation.id,
                                                  key: translation.key,
                                                  english: english,
@@ -127,7 +106,35 @@ class TranslateView: BaseNibView {
                 }()
             }
             .store(in: &subscriptions)
+    }
+    
+    func bind(translations: [Translation]) {
+        self.translations = translations
+    }
+    
+    private
+    func setupTableView() {
         
+        for column in columns {
+            tableView.addTableColumn(.init(identifier: column.identifier).then {
+                $0.resizingMask = []
+                $0.headerCell.attributedStringValue = column.title.withAttributes([
+                    .font(.systemFont(ofSize: 15, weight: .semibold)),
+                    .paragraphStyle(NSMutableParagraphStyle().then { $0.alignment = .center })
+                ])
+                $0.headerCell.alignment = .center
+                $0.minWidth = 100
+            })
+        }
+        
+        
+        tableView.usesAutomaticRowHeights = true
+        tableView.columnAutoresizingStyle = .noColumnAutoresizing
+        
+        tableView.registerNibs(LanguageItemCell.self, TranslateActionCell.self)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         DispatchQueue.main.async {
             self.updateWidthColumns()
@@ -161,8 +168,13 @@ class TranslateView: BaseNibView {
                 $0.representedObject = row
             }
             
-            menu.addItem(menuItem1)
+            let menuItem3 = NSMenuItem(title: "Delete", action: #selector(handleDelete(_:)), keyEquivalent: "").then {
+                $0.representedObject = row
+            }
+            
             menu.addItem(menuItem2)
+            menu.addItem(menuItem1)
+            menu.addItem(menuItem3)
             
             return menu
         default:
@@ -187,15 +199,42 @@ class TranslateView: BaseNibView {
 
     }
     
+    @objc
+    func handleDelete(_ item: NSMenuItem) {
+        guard let row = item.representedObject as? Int,
+              row >= 0
+        else { return }
+        let data = dataSource[row]
+        
+        DispatchQueue.main.async {
+            let processView = self.showProgress(title: "Deleting")
+            processView.progress = 0
+            Task.init {
+                _ = await TranslateAPIRouter.deleteTranslation(translationID: data.id).doRequestToResponseData()
+                processView.progress = 50
+                await AppDataManager.shared.reloadTranslations()
+                processView.progress = 100
+                processView.dismiss()
+            }
+        }
+    }
+    
     @objc func handleEdit(_ item: NSMenuItem) {
         guard let row = item.representedObject as? Int,
               row >= 0
         else { return }
         let data = dataSource[row]
+        
         DispatchQueue.main.async {
             let editView = self.showEdit(key: data.key, value: data.translated, language: self.selectedLanguage)
             editView.onOKAction = { [weak self] newKey, newValue, language in
                 guard let self = self else { return }
+                
+                guard overrideHandleEdit == nil else {
+                    overrideHandleEdit?(data.id, newKey, newValue, language)
+                    return
+                }
+                
                 let processView = self.showProgress(title: "Editting")
                 processView.progress = 0
                 Task.init {
@@ -207,6 +246,17 @@ class TranslateView: BaseNibView {
                 }
             }
         }
+    }
+    @IBAction func onClickEmptyOnly(_ sender: NSButton) {
+        switch sender.state {
+        case .on:
+            justEmpty = true
+        case .off:
+            justEmpty = false
+        default:
+            break
+        }
+        reloadData()
     }
     
     private
@@ -220,6 +270,9 @@ class TranslateView: BaseNibView {
     private
     func reloadData() {
         self.dataSource = {
+            
+            let allData = justEmpty ? self.allData.filter { $0.key.isEmpty || $0.translated.isEmpty } : self.allData
+            
             guard !textSearch.isEmpty else {
                 return allData
             }

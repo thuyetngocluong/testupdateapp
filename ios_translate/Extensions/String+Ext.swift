@@ -23,4 +23,14 @@ extension String {
         }
         return self
     }
+    
+    func remaking() -> Self {
+        self.replacingOccurrences(of: "% @", with: "%@")
+            .replacingOccurrences(of: "％@", with: "%@")
+            .replacingOccurrences(of: "％ @g", with: "%@")
+            .replacingOccurrences(of: "٪@", with: "%@")
+            .replacingOccurrences(of: "٪ @", with: "%@")
+            .replacingOccurrences(of: "\\ n", with: "\n")
+            .replacingOccurrences(of: "\\n", with: "\n")
+    }
 }

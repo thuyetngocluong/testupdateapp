@@ -10,9 +10,11 @@ import EasyCodable
 
 
 struct Translation: Codable {
-    var id: Int = .zero
+    var id: Int = Int.random(in: Int.min..<0)
     var key: String = ""
     var translates: [Item] = []
+    
+    init() {}
     
     init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -25,9 +27,13 @@ struct Translation: Codable {
 
 extension Translation {
     struct Item: Codable {
-        var id: Int = .zero
+        var id: Int = Int.random(in: Int.min..<0)
         var value: String = ""
-        var language: Language = .english
+        var language: LanguageItem = .init()
+        
+        init() {
+            
+        }
         
         init(from decoder: any Decoder) throws {
             let container: KeyedDecodingContainer<Translation.Item.CodingKeys> = try decoder.container(keyedBy: Translation.Item.CodingKeys.self)

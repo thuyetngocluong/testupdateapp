@@ -9,6 +9,19 @@ import Foundation
 
 
 extension UserDefaults {
+    var currentHost: String? {
+        get {
+            UserDefaults.standard.string(forKey: "currentHost")
+        }
+        set {
+            if let newValue, newValue.isEmpty {
+                UserDefaults.standard.set(nil, forKey: "currentHost")
+            } else {
+                UserDefaults.standard.set(newValue, forKey: "currentHost")
+            }
+            
+        }
+    }
     var currentUserJWT: String? {
         UserDefaults.standard.string(forKey: "currentUserJWT")
     }

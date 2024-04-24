@@ -1,5 +1,5 @@
 {
-  "originHash" : "815007816f97e809f871ce10fcf44aceff448cc4330ac1713508d8c007e68a54",
+  "originHash" : "0bdb8eff9ba5973a8512915587e9b4cc3655d725db926f0b0a08b7f8fd211379",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -26,6 +26,15 @@
       "state" : {
         "revision" : "3c6f2432d3429f5936e181e12e5d94dd794dd597",
         "version" : "1.2.0"
+      }
+    },
+    {
+      "identity" : "keyboardshortcuts",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/KeyboardShortcuts",
+      "state" : {
+        "revision" : "09e4a10ed6b65b3a40fe07b6bf0c84809313efc4",
+        "version" : "2.0.0"
       }
     },
     {
@@ -89,6 +98,15 @@
       "state" : {
         "revision" : "d41ef523faef0f911369f79c0b96815d9dbb6d7a",
         "version" : "3.0.0"
+      }
+    },
+    {
+      "identity" : "zip",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/marmelroy/Zip",
+      "state" : {
+        "revision" : "67fa55813b9e7b3b9acee9c0ae501def28746d76",
+        "version" : "2.1.2"
       }
     }
   ],

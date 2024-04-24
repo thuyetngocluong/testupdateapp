@@ -19,9 +19,10 @@ enum AuthAPIRouter: APIRouter {
     case fetchLanguages
     case updatePreferredLanguage(applicationID: Int, languages: [LanguageItem])
     case updateTranslation(id: Int, key: String, translated: String, languageID: Int)
+    case createNewTranslation(translation: Translation, applicationID: Int)
     
     func baseURL() -> String {
-        return "http://localhost:1337"
+        return UserDefaults.standard.currentHost ?? "http://10.10.0.157:3006"
     }
     
     func path() -> String? {
@@ -42,6 +43,8 @@ enum AuthAPIRouter: APIRouter {
             return "/api/application"
         case .updateTranslation:
             return "/api/update-key"
+        case .createNewTranslation:
+            return "/api/create-new-key"
         }
     }
     
@@ -88,6 +91,21 @@ enum AuthAPIRouter: APIRouter {
                 "languageID": languageID,
                 "translated": translated
             ]
+            
+        case .createNewTranslation(let translation, let applicationID):
+            do {
+                let translation = try JSONEncoder().encode(translation)
+                guard var dictionary = try JSONSerialization.jsonObject(with: try JSONEncoder().encode(translation), options: []) as? [String: Any] else {
+                    return [:]
+                }
+                dictionary.removeValue(forKey: "id")
+                dictionary["application"] = applicationID
+                return [
+                    "data": dictionary
+                ]
+            } catch {
+                return [:]
+            }
         default:
             return [:]
         }
@@ -108,7 +126,7 @@ enum AuthAPIRouter: APIRouter {
         switch self {
         case .login, .createLanguage, .updateTranslation:
             return .post
-        case .checkMe, .getTranslations, .fetchLanguages:
+        case .checkMe, .getTranslations, .fetchLanguages, .createNewTranslation:
             return .get
         case .updateLanguage, .updatePreferredLanguage:
             return .put

@@ -39,6 +39,7 @@ extension NSView {
         let new = EditLanguageItemView()
         new.key = key
         new.value = value
+        new.valueTitle = "Value - \(language.languageText)"
         new.language = language
         new.show()
         return new

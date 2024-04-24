@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="EditLanguageItemView" customModule="ios_translate" customModuleProvider="target">
             <connections>
                 <outlet property="keyTextField" destination="AJn-gt-Abp" id="kVH-s0-34M"/>
+                <outlet property="valueLabel" destination="kXA-k9-8Y0" id="xHq-JH-7BF"/>
                 <outlet property="valueTextField" destination="3Ao-Sd-jvC" id="th6-Xj-r9u"/>
             </connections>
         </customObject>

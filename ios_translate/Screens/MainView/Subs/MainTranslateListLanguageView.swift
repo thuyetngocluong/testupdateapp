@@ -6,6 +6,7 @@
 //
 
 import AppKit
+import Combine
 
 
 class MainTranslateListLanguageView: BaseNibView {
@@ -16,16 +17,28 @@ class MainTranslateListLanguageView: BaseNibView {
     
     @Published var selectedLanguage: LanguageItem = .init()
     
+    private var languagesChangePublisher: AnyPublisher<[LanguageItem], Never>!
+    
     override func setup() {
         tableView.rowSizeStyle = .custom
         tableView.registerNibs(MainTranslateListLanguageCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         
-        AppDataManager
-            .shared
-            .$selectedApplication
-            .map(\.languages)
+        $selectedLanguage
+            .removeDuplicates()
+            .sink { [weak self] language in
+                guard let self = self else { return }
+                if let idx = self.dataSource.firstIndex(of: language) {
+                    self.tableView.selectRowIndexes(.init(integer: idx), byExtendingSelection: false)
+                }
+            }
+            .store(in: &subscriptions)
+    }
+    
+    func bind(languagesChangePublisher: AnyPublisher<[LanguageItem], Never>) {
+        self.languagesChangePublisher = languagesChangePublisher
+        languagesChangePublisher
             .withLatestFrom($selectedLanguage, resultSelector: { return ($0, $1) })
             .receive(on: DispatchQueue.main)
             .sink { [weak self] languages, selectedLanguage in
@@ -34,16 +47,6 @@ class MainTranslateListLanguageView: BaseNibView {
                 self.dataSource = languages
                 self.tableView.reloadData()
                 if let idx = self.dataSource.firstIndex(of: selectedLanguage) {
-                    self.tableView.selectRowIndexes(.init(integer: idx), byExtendingSelection: false)
-                }
-            }
-            .store(in: &subscriptions)
-        
-        $selectedLanguage
-            .removeDuplicates()
-            .sink { [weak self] language in
-                guard let self = self else { return }
-                if let idx = self.dataSource.firstIndex(of: language) {
                     self.tableView.selectRowIndexes(.init(integer: idx), byExtendingSelection: false)
                 }
             }

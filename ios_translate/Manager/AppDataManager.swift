@@ -35,6 +35,7 @@ class AppDataManager {
             .store(in: &subscriptions)
         
         $user
+            .compactMap({ $0 })
             .map(\.id)
             .removeDuplicates()
             .sink { [weak self] user in
@@ -44,7 +45,7 @@ class AppDataManager {
             .store(in: &subscriptions)
         
         $user
-            .dropFirst()
+            .compactMap({ $0 })
             .sink { [weak self] user in
                 guard let self = self else { return }
                 self.selectedApplication = user.applications.first(where: { $0.id == self.selectedApplication.id }) ?? user.applications.first ?? selectedApplication
@@ -55,7 +56,7 @@ class AppDataManager {
     @Published var allLanguages: [Language: [LanguageItem]] = [:]
     @Published var translations = [Translation]()
     @Published var selectedApplication: UserApplication = .init()
-    @Published var user: User = .init()
+    @Published var user: User?
     
     func reloadTranslations() async {
         let translations = await AuthAPIRouter.getTranslations(applicationID: self.selectedApplication.id).doRequest(responseDecodedTo: [Translation].self)
@@ -81,5 +82,11 @@ class AppDataManager {
         UserDefaults.standard.currentUser?.user = userInfo
         
         self.user = userInfo
+    }
+    
+    func reload() async {
+        await reloadUser()
+        await reloadTranslations()
+        await reloadAllLanguges()
     }
 }

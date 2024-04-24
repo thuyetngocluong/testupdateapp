@@ -11,6 +11,10 @@ import Then
 
 struct LanguageItem: Hashable, Codable, Then {
     
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.id == rhs.id && lhs.id > 0
+    }
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
@@ -43,11 +47,18 @@ struct LanguageItem: Hashable, Codable, Then {
         return language.languageCode
     }
     
+    var languageAndCountryCode: String {
+        if let countryCode = countryCode {
+            return "\(language.languageCode)-\(countryCode)"
+        }
+        return language.languageCode
+    }
+    
     var languageText: String {
         if let countryCode = countryCode {
             return "\(language.rawValue) (\(language.languageCode)-\(countryCode))"
         }
-        return language.rawValue
+        return "\(language.rawValue) (\(language.languageCode))"
     }
 }
 

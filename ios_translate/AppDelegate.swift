@@ -6,21 +6,44 @@
 //
 
 import Cocoa
+import KeyboardShortcuts
+
+extension KeyboardShortcuts.Name {
+    static let commandR = Self("commandR", default: .init(.r, modifiers: [.command]))
+}
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    private var isReloading = false
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-//        Task.init {
-//            for language in Language.allCases {
-//                for countryCode in language.countryCodes {
-//                    await AuthAPIRouter.updateLanguage(.init().with {
-//                        $0.language = language
-//                        $0.countryCode = countryCode
-//                    }).doRequestToData()
-//                }
-//            }
-//        }
+        
+        
+        NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] (event) -> NSEvent? in
+            guard let self = self else {
+                return event
+            }
+            // Check for the specific key combination (e.g., Command + R)
+            if event.modifierFlags.contains(.command) && event.characters?.lowercased() == "r" {
+                guard !self.isReloading else { return nil }
+                self.isReloading = true
+                Task.init {
+                    let progress = NSView().showProgress(title: "Reloading ...")
+                    await AppDataManager.shared.reload()
+                    progress.progress = 100
+                    progress.dismiss { [weak self] in
+                        self?.isReloading = false
+                    }
+                }
+                
+                // Return nil to prevent the event from being handled further
+                return nil
+            }
+            
+            // Return the event to continue handling
+            return event
+        }
         
     }
     
