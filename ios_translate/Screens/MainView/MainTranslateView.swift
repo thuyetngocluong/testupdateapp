@@ -104,7 +104,7 @@ class MainTranslateView: BaseNibView {
         let newKeyView = AddViewKeyView()
         newKeyView.didTapImport = { [weak self] keys, context in
             guard let self = self else { return }
-            let languageCodes = Set(AppDataManager.shared.selectedApplication.languages.map { $0.language.languageCode })
+            let languageCodes = Set(AppDataManager.shared.selectedApplication.languages.map { $0.languageAndCountryCode })
             self.translate(keys: keys, context: context, languageCodes: Array(languageCodes))
         }
         newKeyView.show()
@@ -132,7 +132,7 @@ class MainTranslateView: BaseNibView {
                 for language in languages {
                     var item = Translation.Item()
                     item.language = language
-                    item.value = response[language.language.languageCode]?[safeIndex: idx] ?? ""
+                    item.value = response[language.languageAndCountryCode]?[safeIndex: idx] ?? ""
                     translation.translates.append(item)
                 }
                 return translation

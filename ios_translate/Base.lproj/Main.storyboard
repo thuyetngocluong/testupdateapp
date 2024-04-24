@@ -702,6 +702,7 @@
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ios_translate" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="qiE-c5-5N6" customClass="SUUpdater"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -742,56 +743,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
-        </scene>
-        <!--Window Controller-->
-        <scene sceneID="3un-IN-Sbi">
-            <objects>
-                <windowController storyboardIdentifier="PopupProgressWindow" id="cMa-ve-edE" customClass="PopupProgressWindow" customModule="ios_translate" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="3pG-yf-ors">
-                        <windowStyleMask key="styleMask" titled="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="294" y="313" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
-                        <view key="contentView" id="cmR-x7-eym">
-                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </view>
-                        <connections>
-                            <outlet property="delegate" destination="cMa-ve-edE" id="PL5-KT-auK"/>
-                        </connections>
-                    </window>
-                    <connections>
-                        <segue destination="ryC-1Z-Btu" kind="relationship" relationship="window.shadowedContentViewController" id="MJP-sC-HzU"/>
-                    </connections>
-                </windowController>
-                <customObject id="HJH-bC-aE6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-209" y="1242"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="NUE-70-ST1">
-            <objects>
-                <viewController id="ryC-1Z-Btu" sceneMemberID="viewController">
-                    <view key="view" id="E1T-Q0-DV7">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <progressIndicator maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="qBv-IZ-dEX">
-                                <rect key="frame" x="0.0" y="-1" width="480" height="272"/>
-                            </progressIndicator>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="qBv-IZ-dEX" secondAttribute="bottom" id="70n-nq-QTJ"/>
-                            <constraint firstItem="qBv-IZ-dEX" firstAttribute="leading" secondItem="E1T-Q0-DV7" secondAttribute="leading" id="G63-UG-wJe"/>
-                            <constraint firstAttribute="trailing" secondItem="qBv-IZ-dEX" secondAttribute="trailing" id="vLZ-7Y-ltI"/>
-                            <constraint firstItem="qBv-IZ-dEX" firstAttribute="top" secondItem="E1T-Q0-DV7" secondAttribute="top" id="y7I-Pb-xnp"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <customObject id="m6O-Gp-EZB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="498" y="1211"/>
+            <point key="canvasLocation" x="11" y="978"/>
         </scene>
     </scenes>
 </document>

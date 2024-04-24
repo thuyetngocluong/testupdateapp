@@ -8,6 +8,7 @@
 import Cocoa
 import SnapKit
 import Combine
+import Sparkle
 
 
 class ViewController: NSViewController {
@@ -26,6 +27,12 @@ class ViewController: NSViewController {
                 self?.setUpLoginView()
             }
             .store(in: &subscriptions)
+        
+        DispatchQueue.main.async {
+            let updater = SUUpdater.shared()
+            updater?.feedURL = URL(string: "some mystery location")
+            updater?.checkForUpdates(self)
+        }
     }
     
     private

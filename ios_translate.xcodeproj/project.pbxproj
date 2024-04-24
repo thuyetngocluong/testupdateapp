@@ -36,6 +36,7 @@
 		DA4610792BD59F4200FBC80E /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4610782BD59F4200FBC80E /* String+Ext.swift */; };
 		DA4C3E022BD2E7AD00A12784 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DA4C3E012BD2E7AD00A12784 /* Realm */; };
 		DA4C3E042BD2E7AD00A12784 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DA4C3E032BD2E7AD00A12784 /* RealmSwift */; };
+		DA6737BD2BD9847400B91D8B /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = DA6737BC2BD9847400B91D8B /* Sparkle */; };
 		DA7A68F12BD22A5B006CE6BF /* BaseSpinIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A68F02BD22A5B006CE6BF /* BaseSpinIndicator.swift */; };
 		DA7A68F42BD249BA006CE6BF /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = DA7A68F32BD249BA006CE6BF /* CombineExt */; };
 		DA7A68F62BD24A7C006CE6BF /* NSProgressView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A68F52BD24A7C006CE6BF /* NSProgressView+Ext.swift */; };
@@ -129,6 +130,7 @@
 		DA21529E2BD05377003C133F /* LanguageItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageItemCell.swift; sourceTree = "<group>"; };
 		DA43201E2BD3656900CF3917 /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
 		DA4610782BD59F4200FBC80E /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		DA6737BE2BD9870200B91D8B /* ios-translate-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ios-translate-Info.plist"; sourceTree = SOURCE_ROOT; };
 		DA7A68F02BD22A5B006CE6BF /* BaseSpinIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSpinIndicator.swift; sourceTree = "<group>"; };
 		DA7A68F52BD24A7C006CE6BF /* NSProgressView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSProgressView+Ext.swift"; sourceTree = "<group>"; };
 		DA7A69022BD24E82006CE6BF /* anim_spinner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = anim_spinner.json; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				DA21529A2BD0522E003C133F /* SnapKit in Frameworks */,
 				DA7A69222BD26FFA006CE6BF /* Alamofire in Frameworks */,
 				DA1597D32BD199CD00E0ABDB /* Then in Frameworks */,
+				DA6737BD2BD9847400B91D8B /* Sparkle in Frameworks */,
 				DA0D073E2BD84D0200A2C4FA /* KeyboardShortcuts in Frameworks */,
 				DA7A69272BD2705F006CE6BF /* PromiseKit in Frameworks */,
 				DACC9D652BD783E3005E4678 /* Zip in Frameworks */,
@@ -308,6 +311,7 @@
 		DA21526C2BD051E9003C133F /* ios_translate */ = {
 			isa = PBXGroup;
 			children = (
+				DA6737BE2BD9870200B91D8B /* ios-translate-Info.plist */,
 				DABFE58B2BD6EA8F00A878B4 /* Utils */,
 				DAC7F3282BD600BE00132C60 /* Components */,
 				DA7A69352BD27F95006CE6BF /* Manager */,
@@ -502,6 +506,7 @@
 				DA4C3E032BD2E7AD00A12784 /* RealmSwift */,
 				DACC9D642BD783E3005E4678 /* Zip */,
 				DA0D073D2BD84D0200A2C4FA /* KeyboardShortcuts */,
+				DA6737BC2BD9847400B91D8B /* Sparkle */,
 			);
 			productName = ios_translate;
 			productReference = DA21526A2BD051E9003C133F /* ios_translate.app */;
@@ -587,6 +592,7 @@
 				DA4C3E002BD2E7AD00A12784 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				DACC9D632BD783E3005E4678 /* XCRemoteSwiftPackageReference "Zip" */,
 				DA0D073C2BD84D0200A2C4FA /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+				DA6737BB2BD9847400B91D8B /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = DA21526B2BD051E9003C133F /* Products */;
 			projectDirPath = "";
@@ -865,6 +871,7 @@
 				DEVELOPMENT_TEAM = 5J3U89Q793;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ios-translate-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "iOS Translate v1.0.2";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -894,6 +901,7 @@
 				DEVELOPMENT_TEAM = 5J3U89Q793;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ios-translate-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "iOS Translate v1.0.2";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -1065,6 +1073,14 @@
 				kind = branch;
 			};
 		};
+		DA6737BB2BD9847400B91D8B /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.0;
+			};
+		};
 		DA7A68F22BD249BA006CE6BF /* XCRemoteSwiftPackageReference "CombineExt" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CombineCommunity/CombineExt";
@@ -1145,6 +1161,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DA4C3E002BD2E7AD00A12784 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		DA6737BC2BD9847400B91D8B /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA6737BB2BD9847400B91D8B /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
 		};
 		DA7A68F32BD249BA006CE6BF /* CombineExt */ = {
 			isa = XCSwiftPackageProductDependency;
