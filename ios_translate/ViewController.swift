@@ -20,6 +20,8 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSApplication.shared.windows.forEach { $0.title = "iOS Translate - v\(NSApplication.shared.getAppVersion() ?? "")" }
+        
         AppDataManager.shared.$user
             .removeDuplicates()
             .filter({ $0 == nil })
@@ -29,8 +31,7 @@ class ViewController: NSViewController {
             .store(in: &subscriptions)
         
         DispatchQueue.main.async {
-            let updater = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
-            updater.startUpdater()
+            AppDelegate.shared.updater.checkForUpdates(nil)
         }
     }
     

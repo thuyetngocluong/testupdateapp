@@ -7,6 +7,7 @@
 
 import Cocoa
 import KeyboardShortcuts
+import Sparkle
 
 extension KeyboardShortcuts.Name {
     static let commandR = Self("commandR", default: .init(.r, modifiers: [.command]))
@@ -15,10 +16,16 @@ extension KeyboardShortcuts.Name {
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    @IBOutlet weak var checkForUpdateButton: NSMenuItem!
     private var isReloading = false
+    
+    lazy var updater = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
+    
+    static var shared: AppDelegate!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
+        Self.shared = self
         
         NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] (event) -> NSEvent? in
             guard let self = self else {
@@ -46,10 +53,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
     }
+    @IBAction func checkForUpdate(_ sender: Any) {
+        updater.checkForUpdates(nil)
+    }
     
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
+    
     
     func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
         return true

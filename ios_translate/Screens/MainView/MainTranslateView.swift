@@ -23,8 +23,6 @@ class MainTranslateView: BaseNibView {
     
     override func setup() {
         
-        NSApplication.shared.mainWindow?.title = "iOS Translate - v\(NSApplication.shared.getAppVersion() ?? "")"
-        
         AppDataManager.shared.$user
             .compactMap({ $0 })
             .removeDuplicates()
