@@ -3,12 +3,12 @@
     <channel>
         <title>ios_translate</title>
         <item>
-            <title>1.0.4</title>
-            <pubDate>Thu, 25 Apr 2024 02:39:44 +0700</pubDate>
-            <sparkle:version>1</sparkle:version>
-            <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
+            <title>1.1</title>
+            <pubDate>Thu, 25 Apr 2024 03:02:50 +0700</pubDate>
+            <sparkle:version>1.1</sparkle:version>
+            <sparkle:shortVersionString>1.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://thuyetngocluong.github.io/testupdateapp/ios_translate-v1.0.4.dmg" length="14595600" type="application/octet-stream" sparkle:edSignature="92bFewxSvm/4Je5qmGLjsw7rLw9cE95ktwDzzUlFL94ScvwFmdsIDbsP5J4W27qlJ+mRtz4Z0WCWHhaBu3P7DA=="/>
+            <enclosure url="https://github.com/thuyetngocluong/testupdateapp/releases/download/v1.1/ios_translate-v1.1.dmg" length="14595615" type="application/octet-stream" sparkle:edSignature="tt6eM8f5zoaE5qO/fQZgBOkLANx47t1JU0KQeadaSleYoOKoWEBKtguH/kk48b87Y6hAho9LeNmGejJLknpsAQ=="/>
         </item>
     </channel>
 </rss>
