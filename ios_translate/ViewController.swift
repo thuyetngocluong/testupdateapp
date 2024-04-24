@@ -29,9 +29,8 @@ class ViewController: NSViewController {
             .store(in: &subscriptions)
         
         DispatchQueue.main.async {
-            let updater = SUUpdater.shared()
-            updater?.feedURL = URL(string: "some mystery location")
-            updater?.checkForUpdates(self)
+            let updater = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
+            updater.startUpdater()
         }
     }
     

@@ -37,6 +37,7 @@
 		DA4C3E022BD2E7AD00A12784 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DA4C3E012BD2E7AD00A12784 /* Realm */; };
 		DA4C3E042BD2E7AD00A12784 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DA4C3E032BD2E7AD00A12784 /* RealmSwift */; };
 		DA6737BD2BD9847400B91D8B /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = DA6737BC2BD9847400B91D8B /* Sparkle */; };
+		DA6737C02BD9894C00B91D8B /* NSApplication+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6737BF2BD9894C00B91D8B /* NSApplication+Ext.swift */; };
 		DA7A68F12BD22A5B006CE6BF /* BaseSpinIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A68F02BD22A5B006CE6BF /* BaseSpinIndicator.swift */; };
 		DA7A68F42BD249BA006CE6BF /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = DA7A68F32BD249BA006CE6BF /* CombineExt */; };
 		DA7A68F62BD24A7C006CE6BF /* NSProgressView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A68F52BD24A7C006CE6BF /* NSProgressView+Ext.swift */; };
@@ -131,6 +132,7 @@
 		DA43201E2BD3656900CF3917 /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
 		DA4610782BD59F4200FBC80E /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		DA6737BE2BD9870200B91D8B /* ios-translate-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ios-translate-Info.plist"; sourceTree = SOURCE_ROOT; };
+		DA6737BF2BD9894C00B91D8B /* NSApplication+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApplication+Ext.swift"; sourceTree = "<group>"; };
 		DA7A68F02BD22A5B006CE6BF /* BaseSpinIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSpinIndicator.swift; sourceTree = "<group>"; };
 		DA7A68F52BD24A7C006CE6BF /* NSProgressView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSProgressView+Ext.swift"; sourceTree = "<group>"; };
 		DA7A69022BD24E82006CE6BF /* anim_spinner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = anim_spinner.json; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				DAEDA0972BD5973100CB576D /* NSAttributed+Ext.swift */,
 				DA4610782BD59F4200FBC80E /* String+Ext.swift */,
 				DABFE5902BD6EF1500A878B4 /* Array+Ext.swift */,
+				DA6737BF2BD9894C00B91D8B /* NSApplication+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -686,6 +689,7 @@
 				DABFE5832BD6B2DD00A878B4 /* Popupable.swift in Sources */,
 				DA7A692D2BD275B7006CE6BF /* User.swift in Sources */,
 				DA7A69342BD2791E006CE6BF /* UserApplication.swift in Sources */,
+				DA6737C02BD9894C00B91D8B /* NSApplication+Ext.swift in Sources */,
 				DA7A69322BD27713006CE6BF /* UserDefault+Ext.swift in Sources */,
 				DA7A69292BD27083006CE6BF /* BaseError.swift in Sources */,
 				DABFE5852BD6B2EC00A878B4 /* AlphaBackgroundButton.swift in Sources */,
