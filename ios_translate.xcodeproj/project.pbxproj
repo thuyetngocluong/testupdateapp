@@ -72,7 +72,6 @@
 		DABFE58D2BD6EA9D00A878B4 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFE58C2BD6EA9D00A878B4 /* Utils.swift */; };
 		DABFE58F2BD6EDA100A878B4 /* TranslateAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFE58E2BD6EDA100A878B4 /* TranslateAPIRouter.swift */; };
 		DABFE5912BD6EF1500A878B4 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFE5902BD6EF1500A878B4 /* Array+Ext.swift */; };
-		DAC7F32A2BD600CC00132C60 /* AddMoreLanguageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC7F3292BD600CC00132C60 /* AddMoreLanguageButton.swift */; };
 		DAC7F32C2BD668C900132C60 /* PopupProgressWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC7F32B2BD668C900132C60 /* PopupProgressWindow.swift */; };
 		DAC7F32F2BD6727100132C60 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAC7F32E2BD6727100132C60 /* ProgressView.xib */; };
 		DAC7F3312BD6727F00132C60 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC7F3302BD6727F00132C60 /* ProgressView.swift */; };
@@ -162,7 +161,6 @@
 		DABFE58C2BD6EA9D00A878B4 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		DABFE58E2BD6EDA100A878B4 /* TranslateAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateAPIRouter.swift; sourceTree = "<group>"; };
 		DABFE5902BD6EF1500A878B4 /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
-		DAC7F3292BD600CC00132C60 /* AddMoreLanguageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoreLanguageButton.swift; sourceTree = "<group>"; };
 		DAC7F32B2BD668C900132C60 /* PopupProgressWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupProgressWindow.swift; sourceTree = "<group>"; };
 		DAC7F32E2BD6727100132C60 /* ProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		DAC7F3302BD6727F00132C60 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -455,7 +453,6 @@
 			isa = PBXGroup;
 			children = (
 				DABFE5812BD6B2CF00A878B4 /* Popup */,
-				DAC7F3292BD600CC00132C60 /* AddMoreLanguageButton.swift */,
 				DAC7F32B2BD668C900132C60 /* PopupProgressWindow.swift */,
 				DA0D073A2BD843B100A2C4FA /* TrackingSizeNSView.swift */,
 			);
@@ -653,7 +650,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DABFE5882BD6E85700A878B4 /* AddViewKeyView.swift in Sources */,
-				DAC7F32A2BD600CC00132C60 /* AddMoreLanguageButton.swift in Sources */,
 				DA7A691D2BD26A20006CE6BF /* MainTranslateListLanguageCell.swift in Sources */,
 				DA1597D92BD19AB800E0ABDB /* TranslateActionCell.swift in Sources */,
 				DABFE58F2BD6EDA100A878B4 /* TranslateAPIRouter.swift in Sources */,
@@ -798,7 +794,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -855,7 +851,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -871,7 +867,7 @@
 				CODE_SIGN_ENTITLEMENTS = ios_translate/ios_translate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.5;
 				DEVELOPMENT_TEAM = 5J3U89Q793;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -884,8 +880,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0.4;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zoro4rk.ios-translate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -901,7 +897,7 @@
 				CODE_SIGN_ENTITLEMENTS = ios_translate/ios_translate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.5;
 				DEVELOPMENT_TEAM = 5J3U89Q793;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -914,8 +910,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0.4;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zoro4rk.ios-translate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

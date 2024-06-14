@@ -12,6 +12,7 @@ import Foundation
 enum TranslateAPIRouter: APIRouter {
    
     case translate(text: String, context: String, languageCodes: [String])
+    case translateTexts(texts: [String], context: String, languageCode: String)
     case importNewKey(translation: Translation)
     case deleteTranslation(translationID: Int)
     
@@ -23,6 +24,8 @@ enum TranslateAPIRouter: APIRouter {
         switch self {
         case .translate:
             return "/api/translate-text"
+        case .translateTexts:
+            return "/api/translate-texts"
         case .importNewKey:
             return "/api/import-new-key"
         case .deleteTranslation:
@@ -60,6 +63,14 @@ enum TranslateAPIRouter: APIRouter {
             return [
                 "id": translationID
             ]
+            
+        case .translateTexts(let texts, let context, let languageCode):
+            return [
+                "texts": texts,
+                "context": context,
+                "languageCode": languageCode
+            ]
+            
         default:
             return [:]
         }

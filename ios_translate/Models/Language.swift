@@ -9,6 +9,7 @@ import Foundation
 import EasyCodable
 import Then
 
+
 struct LanguageItem: Hashable, Codable, Then {
     
     static func == (lhs: Self, rhs: Self) -> Bool {

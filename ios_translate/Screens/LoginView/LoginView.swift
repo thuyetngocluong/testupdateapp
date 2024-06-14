@@ -42,6 +42,9 @@ class LoginView: BaseNibView {
         
         loginButton.didClickButton = { [weak self] in
             guard let self = self else { return }
+            if !ipTextField.stringValue.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                UserDefaults.standard.currentHost = ipTextField.stringValue
+            }
             self.loginButton.isLoading = true
             Task.init {
                 defer {

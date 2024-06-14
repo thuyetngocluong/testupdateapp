@@ -82,3 +82,51 @@ struct Utils {
     }
     
 }
+
+extension Utils {
+    func translate(texts: [String], languageCode: String, context: String, progressTracking: ((String, Double) -> Void)? = nil ) async -> [String] {
+        let total = texts.count
+        var done = 0
+        let chunksOfChunkedTexts = texts.chunked(into: 5).chunked(into: 10)
+        
+        var result = [String]()
+        
+        for chunk in chunksOfChunkedTexts {
+            let resultChunk = await withTaskGroup(of: (idx: Int, value: [String]).self, returning: [String].self) { group in
+                for (idx, texts) in chunk.enumerated() {
+                    group.addTask {
+                        let response = await _translate(texts: texts, context: context, languageCode: languageCode)
+                        return (idx, response)
+                    }
+                }
+                var grouped: [(idx: Int, value: [String])] = []
+                for await result in group {
+                    grouped.append(result)
+                    done += result.value.count
+                    progressTracking?("\(done)/\(total)", Double(done)*100/Double(total))
+                }
+                                 
+                return grouped.sorted(by: { $0.idx < $1.idx }).flatMap({ $0.value })
+            }
+            result.append(contentsOf: resultChunk)
+        }
+        return result
+    }
+    
+    private func _translate(texts: [String], context: String, languageCode: String, tryCount: Int = 1) async -> [String] {
+        guard tryCount >= 0 else {
+            return Array(repeating: "", count: texts.count)
+        }
+        
+        let response = await TranslateAPIRouter.translateTexts(texts: texts,
+                                                               context: context, 
+                                                               languageCode: languageCode).doRequest(responseDecodedTo: [String: [String]].self)
+        if let rs = response?[languageCode] as? [String],
+           rs.count == texts.count
+        {
+            return rs
+        } else {
+            return await _translate(texts: texts, context: context, languageCode: languageCode, tryCount: tryCount-1)
+        }
+    }
+}

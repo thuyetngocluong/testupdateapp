@@ -161,8 +161,13 @@ class SetPreferredLanguageView: BaseNibView, Popupable, PopupContainerViewProtoc
         Task.init {
             await AuthAPIRouter.updatePreferredLanguage(applicationID: AppDataManager.shared.selectedApplication.id,
                                                         languages: selectedLanguages).doRequest(responseDecodedTo: String.self)
-            progressView.progress = 50
+            progressView.progress = 1
             await AppDataManager.shared.reloadUser()
+            await AppDataManager.shared.fillRestOfLanguage { [weak progressView] text, progress in
+                progressView?.title = text
+                progressView?.progress = progress
+            }
+            await AppDataManager.shared.reload()
             progressView.progress = 100
             progressView.dismiss()
             delegate?.dismiss(self, completion: nil)

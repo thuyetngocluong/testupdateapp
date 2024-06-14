@@ -19,7 +19,8 @@ extension String {
             
             let startIndex = jsonString.index(jsonString.startIndex, offsetBy: 5)
             let endIndex = jsonString.index(jsonString.endIndex, offsetBy: -2)
-            return String(jsonString[startIndex...endIndex])
+            let result = String(jsonString[startIndex...endIndex])
+            return result.replacingOccurrences(of: "\\\\n", with: "\\n")
         }
         return self
     }

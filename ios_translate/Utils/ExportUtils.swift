@@ -36,7 +36,7 @@ struct ExportUtils {
             let data = translations.map { translation in
                 let key = translation.key
                 let value = translation.translates.first(where: { $0.language == language })?.value ?? ""
-                return "\"\(key)\" = \"\(value)\";"
+                return "\"\(key)\" = \(value.jsonStringfy());"
             }.joined(separator: "\n").data(using: .utf8)
             
             guard let data = data else { continue }
@@ -74,7 +74,7 @@ struct ExportUtils {
             let data = translations.map { translation in
                 let key = translation.key
                 let value = translation.translates.first(where: { $0.language == language })?.value ?? ""
-                return "\"\(key)\" = \"\(value)\";"
+                return "\"\(key)\" = \(value.jsonStringfy());"
             }.joined(separator: "\n").data(using: .utf8)
             
             guard let data = data else { continue }

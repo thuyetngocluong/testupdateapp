@@ -140,11 +140,11 @@ class MainTranslateView: BaseNibView {
             }
             
             progressPopup.dismiss { [weak self] in
-                self?.showPreview(translations: translations)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    self?.showPreview(translations: translations)
+                }
             }
         }
-        
-        
     }
     
     private

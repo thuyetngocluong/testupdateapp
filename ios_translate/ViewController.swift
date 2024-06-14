@@ -13,13 +13,15 @@ import Sparkle
 
 class ViewController: NSViewController {
     
+    static var shared: ViewController?
+    
     @IBOutlet var contentView: NSView!
     
     private var subscriptions = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        Self.shared = self
         NSApplication.shared.windows.forEach { $0.title = "iOS Translate - v\(NSApplication.shared.getAppVersion() ?? "")" }
         
         AppDataManager.shared.$user
@@ -29,10 +31,6 @@ class ViewController: NSViewController {
                 self?.setUpLoginView()
             }
             .store(in: &subscriptions)
-        
-        DispatchQueue.main.async {
-            AppDelegate.shared.updater.checkForUpdates(nil)
-        }
     }
     
     private

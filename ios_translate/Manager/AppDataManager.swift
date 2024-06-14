@@ -89,4 +89,88 @@ class AppDataManager {
         await reloadTranslations()
         await reloadAllLanguges()
     }
+    
+    func fillRestOfLanguage(progressTracking: ((String, Double) -> Void)? ) async {
+        
+        let translations = self.translations
+        let languages = selectedApplication.languages
+        guard let englishLanguage = selectedApplication.languages.first(where: { $0.language == .english && $0.countryCode == nil }) else {
+            return
+        }
+        
+        var languageNeedTranslates: [LanguageItem: [(translation: Translation, english: Translation.Item)]] = [:]
+        
+        for language in languages {
+            let emptyTranslated = translations.compactMap({ translation -> (translation: Translation, english: Translation.Item)? in
+                
+                // Có tiếng anh
+                guard let existEnglish = translation.translates.first(where: { $0.language == englishLanguage }),
+                      !existEnglish.value.isEmpty
+                else {
+                    return nil
+                }
+                
+                // Ngôn ngữ rỗng
+                if let translates = translation.translates.first(where: { $0.language == language }),
+                   !translates.value.isEmpty 
+                {
+                    return nil
+                }
+                
+                return (translation, existEnglish)
+            })
+            guard !emptyTranslated.isEmpty else { continue }
+            
+            languageNeedTranslates[language] = emptyTranslated
+        }
+        
+        let total = languageNeedTranslates.values.reduce(0, { $0 + $1.count })
+        var currentPercent = Double.zero
+        
+        guard total != .zero else { return }
+        
+        for (language, needTranslate) in languageNeedTranslates {
+            let texts = needTranslate.map({ $0.english.value })
+            let totalTextOfLanguages = texts.count
+            
+            let percent = Double(totalTextOfLanguages)/Double(total)
+            
+            var currentPercentOfLanguage: Double = .zero
+            
+            
+            progressTracking?("Translating english to \(language.languageAndCountryCode)", (currentPercent + currentPercentOfLanguage)*100)
+            
+            let results = await Utils.shared.translate(texts: texts,
+                                                       languageCode: language.languageAndCountryCode,
+                                                       context: self.selectedApplication.defaultContext) { text, process in
+                currentPercentOfLanguage = currentPercent + (process/100)*0.5*percent
+                progressTracking?("Translating english to \(language.languageAndCountryCode): \(text)", (currentPercent + currentPercentOfLanguage)*100)
+            }
+            
+            
+            guard results.count == texts.count else {
+                currentPercent += percent
+                continue
+            }
+            
+            let updateTotal = texts.count
+            var updateCount = 0
+            
+            for (idx, translation) in needTranslate.map(\.translation).enumerated() {
+                
+                _ = await AuthAPIRouter.updateTranslation(id: translation.id,
+                                                          key: translation.key,
+                                                          translated: results[safeIndex: idx] ?? "",
+                                                          languageID: language.id)
+                .doRequestToResponseData()
+                
+                currentPercentOfLanguage = currentPercent + (Double(updateCount)/Double(updateTotal))*0.5*percent + 0.5
+                
+                progressTracking?("Updating translate english to \(language.languageAndCountryCode): \(updateCount)/\(updateTotal)", (currentPercent + currentPercentOfLanguage)*100)
+            
+                updateCount += 1
+            }
+            currentPercent += percent
+        }
+    }
 }

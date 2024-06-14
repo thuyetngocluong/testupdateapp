@@ -15,7 +15,7 @@ protocol Popupable: NSView {
 
 extension Popupable {
     func show() {
-        guard let contentView = NSApplication.shared.keyWindow?.contentView ?? NSApplication.shared.mainWindow?.contentView else {
+        guard let contentView = NSApplication.shared.keyWindow?.contentView ?? NSApplication.shared.mainWindow?.contentView ?? ViewController.shared?.view else {
             return;
         }
         contentView.addSubview(self)

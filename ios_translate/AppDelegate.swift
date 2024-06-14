@@ -54,6 +54,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
     }
     @IBAction func checkForUpdate(_ sender: Any) {
+        
         updater.checkForUpdates(nil)
     }
     

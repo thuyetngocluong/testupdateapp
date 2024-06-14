@@ -196,7 +196,6 @@ class TranslateView: BaseNibView {
             pasteboard.clearContents()
             pasteboard.setString(copyString, forType: .string)
         }
-
     }
     
     @objc
