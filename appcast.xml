@@ -1,14 +1,14 @@
 <?xml version="1.0" standalone="yes"?>
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
-        <title>ios_translate</title>
+        <title>iOSApp</title>
         <item>
-            <title>1.8</title>
-            <pubDate>Wed, 14 Aug 2024 15:42:19 +0700</pubDate>
-            <sparkle:version>1.8</sparkle:version>
-            <sparkle:shortVersionString>1.8</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/thuyetngocluong/testupdateapp/releases/download/v1.8/ios_translate.dmg" length="14597179" type="application/octet-stream" sparkle:edSignature="9s5zFccGtl/LGEPy6nxTGz5/czuLMvAF+FMNZ7uiZ+aMIh3zrrBwTkmwB/CN/sKwVxAUidwRKgADv9RrMK6zBw=="/>
+            <title>2.0</title>
+            <pubDate>Tue, 27 Aug 2024 11:47:58 +0700</pubDate>
+            <sparkle:version>2.0</sparkle:version>
+            <sparkle:shortVersionString>2.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/thuyetngocluong/testupdateapp/releases/download/v2.0/ios_translate.dmg" length="4732408" type="application/octet-stream" sparkle:edSignature="ByoLBzEBgqiaa0XSiAMNkfds8bnf1jZnVRBV6DrdcPbLXgdoSq36YVN5G/fEgIrJM8Oc9VCFAmO0Yx5giN/yAw=="/>
         </item>
     </channel>
 </rss>
