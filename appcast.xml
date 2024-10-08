@@ -4,11 +4,11 @@
         <title>iOSApp</title>
         <item>
             <title>2.2</title>
-            <pubDate>Tue, 08 Oct 2024 15:17:28 +0700</pubDate>
+            <pubDate>Tue, 08 Oct 2024 15:45:58 +0700</pubDate>
             <sparkle:version>2.2</sparkle:version>
             <sparkle:shortVersionString>2.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/thuyetngocluong/testupdateapp/releases/download/v2.2/iOSApp.dmg" length="5457292" type="application/octet-stream" sparkle:edSignature="NxepUE9/K8tk5t29eH34sQORriGnfxZUV93gAzbxhyGzeXuKnszPmgKxrIxFofRvV+ujUF7NJXFZDIvqpXtcBg=="/>
+            <enclosure url="https://github.com/thuyetngocluong/testupdateapp/releases/download/v2.2/iosApp.dmg" length="5457341" type="application/octet-stream" sparkle:edSignature="oyoPggKji/REBwFfGoa94WTanssG9KNA3Aby94HtOxRbC6eMVJ4PabipxSOvwoSkOmsZvsJzxdJ9IvjhcyxgBw=="/>
         </item>
     </channel>
 </rss>
