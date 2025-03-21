@@ -3,12 +3,12 @@
     <channel>
         <title>iOSAppV2</title>
         <item>
-            <title>3.0.4</title>
-            <pubDate>Thu, 20 Mar 2025 10:14:26 +0700</pubDate>
-            <sparkle:version>3.0.4</sparkle:version>
-            <sparkle:shortVersionString>3.0.4</sparkle:shortVersionString>
+            <title>3.0.5</title>
+            <pubDate>Fri, 21 Mar 2025 17:44:15 +0700</pubDate>
+            <sparkle:version>3.0.5</sparkle:version>
+            <sparkle:shortVersionString>3.0.5</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/thuyetngocluong/testupdateapp/releases/download/v3.0.4/iOSApp.dmg" length="6109051" type="application/octet-stream" sparkle:edSignature="WVhN6JHDin6GLf5K0LinmtiAJ4u7RRslTip0pS7bCwlOEbPIkNMP/x+MZkQkXKcTPdYUoudjnNuDmwlmI30vAg=="/>
+            <enclosure url="https://github.com/thuyetngocluong/testupdateapp/releases/download/v3.0.5/iOSApp.dmg" length="6154514" type="application/octet-stream" sparkle:edSignature="UtzEAQxBqqe9BipOk3OCBrRK2GpXlHAPDb9Ec0yO456/GAiobRzeKjgsFbVWb+BAcdEDTcU7qgsd+19tuv9jBQ=="/>
         </item>
     </channel>
 </rss>
