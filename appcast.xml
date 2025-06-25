@@ -1,14 +1,14 @@
 <?xml version="1.0" standalone="yes"?>
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
-        <title>iOSAppV2</title>
+        <title>ios_app</title>
         <item>
-            <title>3.0.8</title>
-            <pubDate>Tue, 06 May 2025 15:06:53 +0700</pubDate>
-            <sparkle:version>3.0.8</sparkle:version>
-            <sparkle:shortVersionString>3.0.8</sparkle:shortVersionString>
+            <title>4.0.0</title>
+            <pubDate>Wed, 25 Jun 2025 17:29:41 +0700</pubDate>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>4.0.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/thuyetngocluong/testupdateapp/releases/download/v3.0.8/iOSAppV2.dmg" length="6416358" type="application/octet-stream" sparkle:edSignature="4AlWNY74bMo4hVfmUwJ73TRGpPIdNU2oTntRMVH5Ao2gnM6h8Z5+JxlJQnSz0gIb++R4pPSDChchf2XOWhi2Aw=="/>
+            <enclosure url="https://github.com/thuyetngocluong/testupdateapp/releases/download/v4.0/ios_app.dmg" length="19455477" type="application/octet-stream" sparkle:edSignature="qIln/A4cSuyJyKSUKasPCje3Xg6iEGgBOfGmr6qIl3yAU7lzjo8ia97TO0SRJZ9ApRAH7AEbsG10VG2581e4DA=="/>
         </item>
     </channel>
 </rss>
