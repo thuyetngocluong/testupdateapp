@@ -3,12 +3,12 @@
     <channel>
         <title>ios_app</title>
         <item>
-            <title>4.0.1</title>
-            <pubDate>Thu, 26 Jun 2025 15:16:00 +0700</pubDate>
-            <sparkle:version>4.0.1</sparkle:version>
-            <sparkle:shortVersionString>4.0.1</sparkle:shortVersionString>
+            <title>4.0.2</title>
+            <pubDate>Wed, 30 Jul 2025 03:53:30 +0700</pubDate>
+            <sparkle:version>4.0.2</sparkle:version>
+            <sparkle:shortVersionString>4.0.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/thuyetngocluong/testupdateapp/releases/download/v4.0.1/ios_app.dmg" length="19470857" type="application/octet-stream" sparkle:edSignature="qgxhHXQP6qwKjcxZZ7yzQVhPY5ZGUAVXdQaN9egzWogf/JHhq1ozd6U4NJ3Oqn9+h5z2w6mHLMSfLmlH9LkIDA=="/>
+            <enclosure url="https://github.com/thuyetngocluong/testupdateapp/releases/download/v4.0.2/ios_app.dmg" length="20418511" type="application/octet-stream" sparkle:edSignature="Ts/2WJqbHrL2x/aNnnW78cBDhdieWej3nQd9i43M8BUf4LoOPetDvqCD8xxsrsbRiRfugvYyMdgMiR/Yky7iBA=="/>
         </item>
     </channel>
 </rss>
